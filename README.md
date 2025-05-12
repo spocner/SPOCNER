@@ -84,9 +84,7 @@ Ouvrir le lien http://localhost:8080 dans un navigateur pour accéder à l'inter
 
 ## Version en ligne
 
-Une [version de démonstration](http://pp-obtic.sorbonne-universite.fr/toolbox/) est disponible en ligne.
-Une nouvelle version pour diffusion plus large est en cours de conception.
-
+\[REDACTED\]
 ____
 
 
