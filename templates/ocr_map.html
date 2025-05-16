@@ -29,24 +29,7 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
 
 </head>
-{% block header %}
-    <div class="logo">
-        <a href="{{ url_for('ocr_map') }}"><img alt="ObTIC"
-                                                src="{{ url_for('static', filename='img/ObTIC-logo-white.png') }}"/>
-            <h1 style="font-family:'Comprehension', serif;">Pandore toolbox</h1></a>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('projet') }}" id="menu_projet">{{ _('Projet') }}</a></li>
-                <li><a href="{{ url_for('documentation') }}">{{ _('Documentation') }}</a></li>
-                <li><a href="{{ url_for('contact') }}">{{ _('Contact') }}</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="spacer">
-        &nbsp;
-    </div>
 
-{% endblock %}
 {% block content %}
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -541,7 +524,11 @@
             <option value="en_core_web_lg">en_core_web_lg</option>
             `;
             } else if (moteurREN.value === "flair") {
-                modeleREN.innerHTML = '<option value="flair/ner-french" selected="true">flair/ner-french</option>';
+                modeleREN.innerHTML = `
+                <option value="flair/ner-french" selected="true">flair/ner-french</option>
+                <option value="flair/ner-english">flair/ner-english</option>
+                <option value="flair/ner-portuguese">flair/ner-portuguese</option>
+                `;
             }
         }
 
@@ -550,7 +537,7 @@
             if (moteurREN.value === "spacy") {
                 modeleREN.innerHTML = `
             <option value="fr_core_news_sm">fr_core_news_sm</option>
-            <option value="fr_core_news_md">fr_core_news_md</option>
+            <option value="fZr_core_news_md">fr_core_news_md</option>
             <option value="fr_core_news_lg" selected="true">fr_core_news_lg</option>
 
             <option value="pt_core_news_sm">pt_core_news_sm</option>
@@ -562,7 +549,12 @@
             <option value="en_core_web_lg">en_core_web_lg</option>
             `;
             } else if (moteurREN.value === "flair") {
-                modeleREN.innerHTML = '<option value="flair/ner-french" selected="true">flair/ner-french</option>';
+                modeleREN.innerHTML = `
+                <option value="flair/ner-french" selected="true">flair/ner-french</option>
+                <option value="flair/ner-english">flair/ner-english</option>
+                <option value="flair/ner-portuguese">flair/ner-portuguese</option>
+                `;
+
             } else if (moteurREN.value === "aucun") {
                 modeleREN.innerHTML = '<option value="aucun" selected="true">aucun</option>';
             }
